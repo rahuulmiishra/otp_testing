@@ -1,0 +1,24 @@
+.multi-step-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 30vw;
+  gap: 16px;
+  background-color: darkolivegreen;
+  border-radius: 6px;
+}
+
+.control-row {
+  display: flex;
+  gap: 20px;
+}
+
+.control-row label {
+  width: 200px;
+}

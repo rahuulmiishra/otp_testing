@@ -1,0 +1,9 @@
+div input[type="text"] {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  margin-inline: 20px;
+}
