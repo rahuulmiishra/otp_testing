@@ -45,6 +45,9 @@ function OTP({ count = 4, onChange = () => {} }) {
   function handleChange(index) {
     return (e) => {
       const old = [...opts];
+      if (e.key === "Meta") {
+        return;
+      }
       if (e.key === "Backspace") {
         old[index] = "";
 
@@ -86,12 +89,28 @@ function OTP({ count = 4, onChange = () => {} }) {
             value={opts[i]}
             type="text"
             onKeyUp={handleChange(i)}
-            // onChange={(e) => {
-            //   console.log(e.target.value, "c");
-            // }}
+            onChange={(e) => {
+              if (e.target.value.length > 1) {
+                alert(e.target.value);
+              }
+            }}
           />
         );
       })}
+
+      <div>
+        When focus is on me, and otp comes nothing will happen.
+        <input type="text" placeholder="non autocomplete text" />
+      </div>
+
+      <div>
+        When otp comes, i will be filled when u tap on otp
+        <input
+          type="text"
+          autoComplete="one-time-code"
+          placeholder="with autocomplete text"
+        />
+      </div>
     </div>
   );
 }
